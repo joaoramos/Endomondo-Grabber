@@ -41,4 +41,13 @@
     $fp = fopen('workout-lenght.txt', 'w');
     fwrite($fp, $distance);
     fclose($fp);
+
+    // Optional: Read the files
+    $lenght = fopen("workout-lenght.txt", "r");
+    $duration = fopen("workout-duration.txt", "r");
+    $show_lenght = fread($lenght,8192);
+    $show_duration = fread($duration,8192);                                                                                                   
+    fclose($lenght);
+    fclose($duration);
+    echo $show_lenght.' ran in a total of '.$show_duration.'h';
 ?>
